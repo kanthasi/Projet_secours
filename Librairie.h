@@ -59,23 +59,23 @@ typedef struct {
 
 typedef enum 
 { 
-	FLUIDE, 
+    FLUIDE,
     BOUCHE 
 } 
 TypeTrafic; 
 
 typedef struct 
 { 
-	TypeTrafic type; 
-	bool priorite; 
+   TypeTrafic type; 
+   bool priorite; 
 } 
 Trafic; 
 
 typedef enum 
 { 
-	DETRUITE, 
-	ENDOMMAGEE, 
-	NON_ENDOMMAGEE 
+   DETRUITE, 
+   ENDOMMAGEE, 
+   NON_ENDOMMAGEE 
 } 
 EtatRoute; 
 
