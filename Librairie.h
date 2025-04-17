@@ -1,40 +1,41 @@
-typedef enum {
-        URGENCE INCENDIE 
-        URGENCE EVACUATION 
-        AUCUNE_URGENCE 
-}typeURGENCE;
-typedef struct {
-    typeUrgence type 
-    int niveau;
-    int personne en danger;
-    bool besoin de ressource;
-}Urgence;
-typedef struct {
-    char nom[50];
-    int nb_habitants;
-} Ville;
+// structure.h
+#ifndef STRUCTURE_H
+#define STRUCTURE_H
+
+#include <stdbool.h> 
+#define MAX_RESSOURCES 10
+#define MAX_NOM 30
+#define N_SOMMETS 50
 
 typedef struct {
-    char nom[50];
-    int nb_malades;
-    int places_disponibles;
-    Ressource stock[10];
+    char nom[20];
+    int poids;
+    int valeur_nutritive;
+    int priorite;  // 1 = médicament prioritaire
+} Ressource;
+
+typedef struct {
+    char nom[MAX_NOM];
+    bool est_hopital;
+
+    int nb_habitants;       // si ville
+    int nb_malade;          // si hôpital
+    int place_disponible;
+
+    Ressource stock[MAX_RESSOURCES];
     int nb_ressources;
-} Hopital;
-
-
-typedef enum {VILLE_TYPE, HOPITAL_TYPE} TypeSommet;
+} Sommet;
 
 typedef struct {
-    int id;
-    float distance_epicentre;
+    int distance;
+    char etat[20];
+    int capacite_circulation;
+    bool fluide;
+    bool priorite;
     bool est_endommage;
-    TypeSommet type;
-    union {
-        Ville ville;
-        Hopital hopital;
-    };
-} Sommet;
+    bool securise;
+} Route;
+
 
 
 // ressources 
@@ -46,15 +47,12 @@ typedef struct {
   int equipement; 
 }Ressources; 
 
-typedef struct {
-    TypeRessource type;
-    int poids;
-    int valeur_nutritive;
-    int priorite; // Médicament = 1, Nourriture = 2
-} Ressource;
+
 
 typedef struct {
   float charge_max;
   float charge_actuelle;
   bool est_en_service; 
 }Vehicule_Secours;
+
+#endif
