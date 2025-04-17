@@ -56,3 +56,37 @@ typedef struct {
 }Vehicule_Secours;
 
 #endif
+
+typedef enum 
+{ 
+	FLUIDE, 
+    BOUCHE 
+} 
+TypeTrafic; 
+
+typedef struct 
+{ 
+	TypeTrafic type; 
+	bool priorite; 
+} 
+Trafic; 
+
+typedef enum 
+{ 
+	DETRUITE, 
+	ENDOMMAGEE, 
+	NON_ENDOMMAGEE 
+} 
+EtatRoute; 
+
+typedef struct 
+{ 
+    int nombre_voies; 
+    EtatRoute etat;  
+    int distance; 
+    int capacite_circulation; 
+    bool securise; 
+    Sommet Depart; 
+    Sommet Arrivee; 
+} 
+Route; 
