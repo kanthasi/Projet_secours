@@ -36,7 +36,39 @@ typedef struct {
     bool securise;
 } Route;
 
+typedef enum 
+{ 
+    FLUIDE, 
+    BOUCHE 
+} 
+TypeTrafic; 
 
+typedef struct 
+{ 
+    TypeTrafic type; 
+    bool priorite; 
+} 
+Trafic; 
+
+typedef enum 
+{ 
+    DETRUITE, 
+    ENDOMMAGEE, 
+    NON_ENDOMMAGEE 
+} 
+EtatRoute; 
+
+typedef struct 
+{
+    int distance;
+    EtatRoute etat;
+    int capacite_circulation;
+    bool fluide;
+    bool priorite;
+    bool est_endommage;
+    bool securise;
+} 
+Route;
 
 // ressources 
 typedef enum {MEDICAMENT, NOURRITURE} TypeRessource;
