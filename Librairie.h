@@ -26,16 +26,6 @@ typedef struct {
     int nb_ressources;
 } Sommet;
 
-typedef struct {
-    int distance;
-    char etat[20];
-    int capacite_circulation;
-    bool fluide;
-    bool priorite;
-    bool est_endommage;
-    bool securise;
-} Route;
-
 typedef enum 
 { 
     FLUIDE, 
