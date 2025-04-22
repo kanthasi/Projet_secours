@@ -77,4 +77,14 @@ typedef struct {
   bool est_en_service; 
 }Vehicule_Secours;
 
+typedef struct {
+Sommet sommet 
+arc * liste adjacence 
+}NoeudGraphe 
+
+typedef struct {
+NoeudGraphe noeud [Max_Sommet]
+int Ordre 
+}Graphe 
+
 #endif
