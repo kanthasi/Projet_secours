@@ -57,6 +57,7 @@ typedef struct
     bool priorite;
     bool est_endommage;
     bool securise;
+    int vehicules_routes;
 } 
 Route;
 
