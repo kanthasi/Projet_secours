@@ -22,17 +22,7 @@ void generer_sommets() {
     }
 }
 
-void connecter_sommets() {
-    for (int i = 0; i < N_SOMMETS; i++) {
-        int connexions = rand() % 5 + 3; // entre 3 et 7
-        for (int j = 0; j < connexions; j++) {
-            int cible = rand() % N_SOMMETS;
-            if (cible != i && graphe[i][cible] == NULL) {
-                graphe[i][cible] = creer_route();
-            }
-        }
-    }
-}
+
 
 void afficher_voisins(int i) {
     printf("\nConnexions de %s :\n", sommets[i].nom);
