@@ -33,12 +33,84 @@ void afficher_voisins(int i) {
     }
 }
 
+Route *creer_route()
+{
+    int proba_creer_route = rand() % 2;
+    if(proba_creer_route == 0)
+    {
+        return NULL; // pas de création de route
+    }
+
+    Route *route = malloc(sizeof(Route)); // Allocation dynamique pour les routes
+
+    route->distance =  rand() % 200 + 10; // génération aléatoire d'une distance (entre 10 et 200km par ex)
+
+    route->capacite_circulation = (route->distance)*2; // 2 véhicules par km
+
+    route->vehicules_routes = rand()% (route->capacite_circulation + 1);
+
+    // fluide
+    int estfluide =rand()%2;
+    if(estfluide == 0)
+    {
+        route->fluide = true;
+    }
+    else
+    {
+        route->fluide = false;
+    }
+
+    // priorité
+    int estprioritaire =rand()%2;
+    if(estprioritaire == 0)
+    {
+        route->priorite = true;
+    }
+    else
+    {
+        route->priorite = false;
+    }
+
+    // securisation
+    int securisation =rand()%2;
+    if(securisation == 0)
+    {
+        route->securisee = true;
+    }
+    else
+    {
+        route->securisee = false;
+    }
+
+    // etat
+    int etat_attribue = rand()%3;
+    if(etat_attribue == 0)
+    {
+        route->etat = NON_ENDOMMAGEE;
+        route->est_endommagee = false;
+    }
+    else if(etat_attribue == 1)
+    {
+        route->etat = ENDOMMAGEE;
+        route->est_endommagee = true;
+    }
+    else 
+    {
+        route->etat = DETRUITE;
+        route->est_endommagee = true;
+    }
+
+    return route;
+}
+
+
 int main() {
     srand(time(NULL));
     generer_sommets();
     connecter_sommets();
     sauvegarder_donnees("data.txt");
     afficher_voisins(0); // Exemple : afficher les voisins du sommet 0
+    creer_route();
     return 0;
 }
 
