@@ -52,4 +52,14 @@ void Afficher_chemin_accessible(int num_sommet, Route *graphe[N_SOMMETS][N_SOMME
         }
     }
 }
+// question 3
+void afficher_sommets_inaccessibles(bool parcouru[N_SOMMETS], Sommet sommet[N_SOMMETS]) {
+    printf("\n=== Sommets inaccessibles après le tremblement de terre ===\n");
+    for (int i = 0; i < N_SOMMETS; i++) {
+        if (!parcouru[i]) {
+            printf(" - %s\n", sommet[i].nom);
+        }
+    }
+}
+
 
