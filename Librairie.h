@@ -24,6 +24,7 @@ typedef struct {
 
     Ressource stock[MAX_RESSOURCES];
     int nb_ressources;
+    int nombre;
 } Sommet;
 
 typedef enum 
@@ -80,13 +81,13 @@ typedef struct {
 }Vehicule_Secours;
 
 typedef struct {
-Sommet sommet 
-arc * liste adjacence 
+Sommet sommet; 
+Route * liste_adjacence; 
 }NoeudGraphe 
 
 typedef struct {
-NoeudGraphe noeud [Max_Sommet]
-int Ordre 
+NoeudGraphe noeud [Max_Sommet];
+int Ordre; 
 }Graphe 
 
 #endif
