@@ -6,7 +6,7 @@ void afficherRoutes(Graphe* g) {
                    route.depart, route.arrive,
                    route.etat,
                    route.capacite_circulation);
-            arc = arc->frere; 
+          route  = route->frere; 
     }
 }
 void Creation_graphe(Route *graphe[N_SOMMETS][N_SOMMETS])
