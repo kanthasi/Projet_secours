@@ -18,6 +18,10 @@ void Creation_graphe(Route *graphe[N_SOMMETS][N_SOMMETS])
     }
 }
 
+bool parcouru[N_SOMMETS];
+Sommet sommet[N_SOMMETS];
+Route *graphe[N_SOMMETS][N_SOMMETS];
+
 // Parcours en profondeur
 void Afficher_chemin_accessible(int num_sommet, Route *graphe[N_SOMMETS][N_SOMMETS], bool parcouru[N_SOMMETS], Sommet sommet[N_SOMMETS])
 {
