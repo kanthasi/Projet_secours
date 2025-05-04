@@ -58,6 +58,7 @@ typedef struct
     bool est_endommage;
     bool securise;
     int vehicules_routes;
+    Route * frere 
 } 
 Route;
 
