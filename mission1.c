@@ -2,13 +2,16 @@ void afficherRoutes(Graphe* g) {
     printf("Liste des routes du graphe :\n");
     for (int i = 0; i < g->ordre; i++) {
         Route* route = g->noeuds[i].liste_adj;
-            printf("Route de %d vers %d - Etat: %d - Capacite: %d\n",
-                   route.depart, route.arrive,
-                   route.etat,
-                   route.capacite_circulation);
-          route  = route->frere; 
+        while (route != NULL) {
+            printf("Route depuis le sommet %d : Etat = %d - Capacité = %d\n",
+                   i,
+                   route->etat,
+                   route->capacite_circulation);
+            route = route->frere;
+        }
     }
 }
+
 void Creation_graphe(Route *graphe[N_SOMMETS][N_SOMMETS])
 {
     for(int indice1 = 0; indice1 < N_SOMMETS; indice1 ++)
