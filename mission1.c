@@ -1,10 +1,12 @@
 void afficherRoutes(Graphe* g) {
     printf("Liste des routes du graphe :\n");
-    for (int i = 0; i < g->ordre; i++) {
-        Route* route = g->noeuds[i].liste_adj;
+    for (int i = 0; i < g->Ordre; i++) {
+        Route* route = g->noeud[i].liste_adjacence;
         while (route != NULL) {
-            printf("Route depuis le sommet %d : Etat = %d - Capacité = %d\n",
+            printf("Route de %d vers %d - Distance: %d - État: %d - Capacité: %d\n",
                    i,
+                   route->destination,
+                   route->distance,
                    route->etat,
                    route->capacite_circulation);
             route = route->frere;
