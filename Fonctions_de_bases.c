@@ -4,6 +4,7 @@
 #include <time.h>
 #include "Librairie.h"
 
+// AU final j'ai mis ca dans le main principal
 Sommet sommets[N_SOMMETS];
 Route* graphe[N_SOMMETS][N_SOMMETS];
 void generer_sommets() {
