@@ -108,8 +108,6 @@ void determiner_plus_court_chemin(int sommet_depart, Route *graphe[N_SOMMETS][N_
 
 int extraire_routes_valides(Route *graphe[N_SOMMETS][N_SOMMETS], Arete aretes[]);
 void kruskal(Route *graphe[N_SOMMETS][N_SOMMETS], Sommet sommets[N_SOMMETS]);
-int trouver_parent(int parent[], int i);
-void unir_ensembles(int parent[], int x, int y);
 void afficher_routes_a_securiser(Arete aretes[], int nb_aretes);
 
 void planifier_secours(Sommet sommets[N_SOMMETS], Route *graphe[N_SOMMETS][N_SOMMETS], Vehicule_Secours vehicules[], int nb_vehicules, int sommet_depart);
