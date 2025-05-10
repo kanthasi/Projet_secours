@@ -91,6 +91,14 @@ NoeudGraphe noeud [Max_Sommet];
 int Ordre; 
 }Graphe 
 
+typedef struct {
+    int depart;
+    int arrivee;
+    int distance;
+} RouteCandidate;
+
+void identifier_routes_a_securiser(Graphe *graphe);
+
 void generer_sommets();
 void afficher_voisins(int i);
 Route* creer_route();
