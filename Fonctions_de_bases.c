@@ -36,12 +36,6 @@ void afficher_voisins(int i) {
 
 Route *creer_route()
 {
-    int proba_creer_route = rand() % 2;
-    if(proba_creer_route == 0)
-    {
-        return NULL; // pas de création de route
-    }
-
     Route *route = malloc(sizeof(Route)); // Allocation dynamique pour les routes
 
     route->distance =  rand() % 200 + 10; // génération aléatoire d'une distance (entre 10 et 200km par ex)
