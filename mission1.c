@@ -16,7 +16,7 @@ void afficherRoutes(Graphe* g) {
 
 void Creation_graphe(Route *graphe[N_SOMMETS][N_SOMMETS])
 {
-    int max_routes = 40;
+    int max_routes = 50;
     int routes_creees = 0;
 
     for(int indice1 = 0; indice1 < N_SOMMETS; indice1 ++)
