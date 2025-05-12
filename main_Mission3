@@ -102,6 +102,11 @@ int main()
             printf(" %d km. \n", distance[i]); 
         }
     }
+}
+
+
+
+// Au départ villes endommagees accessibles puis endommagement va endommager n nouvelles villes et celles endommagees a la base ce qui va les rendre inaccessibles
 
 
     return 0;
