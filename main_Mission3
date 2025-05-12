@@ -56,7 +56,7 @@ int main()
             
             printf("- ");
 
-            for(int j = 1; j < longueur_chemin; j ++)
+            for(int j = 0; j < longueur_chemin; j ++)
             {
                 printf("%s", sommet[chemin[j]].nom);
                 if(j != longueur_chemin - 1)
@@ -70,7 +70,7 @@ int main()
 
     // Endommagement en temps reel, degats dans de nouvelles villes mais aussi dans les villes deja endommagees a la base
     int nombre_endommagements = 3;
-    printf("%d routes ont ete endommagees. \n \n", nombre_endommagements);
+    printf("\n%d routes ont ete endommagees. \n \n", nombre_endommagements);
 
 
     for(int i = 0; i < nombre_endommagements; i ++)
@@ -91,7 +91,7 @@ int main()
             
             printf("- ");
 
-            for(int j = 1; j < longueur_chemin; j ++)
+            for(int j = 0; j < longueur_chemin; j ++)
             {
                 printf("%s", sommet[chemin[j]].nom);
                 if(j != longueur_chemin - 1)
