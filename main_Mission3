@@ -1,0 +1,108 @@
+int main() 
+{
+    srand(time(NULL));
+
+    char *noms_sommets[] = 
+    {
+    "Manchester", "Londres", "Paris", "Berlin", "Madrid",
+    "Rome", "Bruxelles", "Amsterdam", "Lisbonne", "Vienne",
+    "Zurich", "Oslo", "Copenhague", "Athenes", "Stockholm",
+    "Helsinki", "Prague", "Toulouse", "Budapest", "Dublin",
+    "Nice", "Barcelone", "Bucarest", "Warsaw", "Porto",
+    "Lille", "Miami", "Grenada", "Ibiza", "L.A",
+    "NewYork", "Boston", "Milan", "Capri", "Portofino",
+    "Nantes", "Angers", "Munich", "Montreal", "Mina",
+    "Cap", "Nimes", "Aix", "Tanger", "Zoug",
+    "Izmir", "Istanbul", "Tunis", "Alger", "Agadir"
+    };
+
+    // Initialisation sommets
+    int Depart = 0; // Sommet de depart
+    int Predecesseur[N_SOMMETS];
+    int chemin[N_SOMMETS];
+    int distance[N_SOMMETS];
+
+    for (int indice = 0; indice < N_SOMMETS; indice ++) 
+    {
+        strcpy(sommet[indice].nom, noms_sommets[indice]);  
+
+        sommet[indice].est_hopital = false;
+        sommet[indice].nb_habitants = rand() % 200;
+        sommet[indice].nb_malade = rand() % 100;
+        sommet[indice].place_disponible = rand() % 50;
+        sommet[indice].nb_ressources = 0;
+    }
+
+    Creation_graphe(graphe);
+
+    printf("Les chemins accessibles depuis %s sont : \n\n", sommet[Depart].nom);
+    Afficher_chemin_accessible(Depart, chemin, 0, graphe, parcouru, sommet);
+
+    for(int i = 0; i < N_SOMMETS; i ++)
+    {
+        distance[i] = Infini;
+    }
+    distance[Depart] = 0;
+    Djikstra(graphe, distance, Depart, Predecesseur);
+
+    // Affichage pour la fonction Djikstra
+    printf("\nLes plus courts chemins depuis %s sont : \n", sommet[Depart].nom);
+    for(int i = 1; i < N_SOMMETS; i ++)
+    {
+        if(distance[i] != Infini)
+        {
+            int chemin[N_SOMMETS];
+            int longueur_chemin = Chemin_Djikstra(i, Predecesseur, chemin);
+            
+            printf("- ");
+
+            for(int j = 1; j < longueur_chemin; j ++)
+            {
+                printf("%s", sommet[chemin[j]].nom);
+                if(j != longueur_chemin - 1)
+                {
+                    printf("->");
+                }
+            }
+            printf(" %d km. \n", distance[i]); 
+        }
+    }
+
+    // Endommagement en temps reel, degats dans de nouvelles villes mais aussi dans les villes deja endommagees a la base
+    int nombre_endommagements = 3;
+    printf("%d routes ont ete endommagees. \n \n", nombre_endommagements);
+
+
+    for(int i = 0; i < nombre_endommagements; i ++)
+    {
+        Endommager(graphe);
+    }
+
+    // Affichage pour la fonction Djikstra apres endommagement
+    Djikstra_endommagement(graphe, distance, Depart, Predecesseur);
+
+    printf("\n Apres de nouveaux dommages, les plus courts chemins depuis %s sont : \n", sommet[Depart].nom);
+    for(int i = 1; i < N_SOMMETS; i ++)
+    {
+        if(distance[i] != Infini)
+        {
+            int chemin[N_SOMMETS];
+            int longueur_chemin = Chemin_Djikstra(i, Predecesseur, chemin);
+            
+            printf("- ");
+
+            for(int j = 1; j < longueur_chemin; j ++)
+            {
+                printf("%s", sommet[chemin[j]].nom);
+                if(j != longueur_chemin - 1)
+                {
+                    printf("->");
+                }
+            }
+            printf(" %d km. \n", distance[i]); 
+        }
+    }
+
+
+    return 0;
+}
