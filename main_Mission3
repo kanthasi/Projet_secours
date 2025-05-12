@@ -70,7 +70,7 @@ int main()
 
     // Endommagement en temps reel, degats dans de nouvelles villes mais aussi dans les villes deja endommagees a la base
     int nombre_endommagements = 3;
-    printf("\n%d routes ont ete endommagees. \n \n", nombre_endommagements);
+    printf("\n%d routes ont ete endommagees et les routes initialement endommagees aussi, elles ne sont plus accessibles. \n \n", nombre_endommagements);
 
 
     for(int i = 0; i < nombre_endommagements; i ++)
