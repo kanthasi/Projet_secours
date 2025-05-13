@@ -68,9 +68,9 @@ int main()
         }
     }
 
-    // Endommagement en temps reel, degats dans de nouvelles villes mais aussi dans les villes deja endommagees a la base
+      // Endommagement en temps reel, degats dans de nouvelles villes mais aussi dans les villes deja endommagees a la base
     int nombre_endommagements = 3;
-    printf("\n%d routes ont ete endommagees et les routes initialement endommagees aussi, elles ne sont plus accessibles. \n \n", nombre_endommagements);
+    printf("%d routes ont ete endommagees. \n \n", nombre_endommagements);
 
 
     for(int i = 0; i < nombre_endommagements; i ++)
@@ -102,12 +102,6 @@ int main()
             printf(" %d km. \n", distance[i]); 
         }
     }
-}
 
-
-
-// Au départ villes endommagees accessibles puis endommagement va endommager n nouvelles villes et celles endommagees a la base ce qui va les rendre inaccessibles
-
-
-    return 0;
+return 0;
 }
