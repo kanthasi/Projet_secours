@@ -1,0 +1,28 @@
+int main()
+{
+    Vehicule_Secours vehicules[MAX_VEHICULES]=
+    {
+        {100.0, 50.0, true},
+        {200.0, 150.0, true},
+        {300.0, 50.0, true},
+        {100.0, 25.0, false},
+        {220.0, 100.0, true}
+    };
+
+    int nombre_vehicules_secours = 5;
+
+    int indices[MAX_VEHICULES]; // Tableau stockant indices des vehicules
+
+    Tri_vehicules(vehicules, nombre_vehicules_secours);
+
+    int nombre_vehiculesprioritaires = Priorite_vehicules_secours(vehicules, nombre_vehicules_secours, indices);
+
+    printf("\nVehicules a envoyer en priorite : \n");
+    for(int i = 0; i < nombre_vehiculesprioritaires; i ++)
+    {
+        int indice = indices[i];
+        printf("- vehicule %d : charge maximale = %.2f, charge actuelle = %.2f \n", indice + 1, vehicules[indice].charge_max, vehicules[indice].charge_actuelle);
+    }
+
+    return 0;
+}
