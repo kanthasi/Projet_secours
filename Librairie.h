@@ -6,6 +6,7 @@
 #define MAX_RESSOURCES 10
 #define MAX_NOM 30
 #define N_SOMMETS 50
+#define N_CIRCUITS 4
 
 typedef struct {
     char nom[20];
